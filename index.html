@@ -137,84 +137,7 @@
             <li><a href="/index2.html" class="btn-primary">Get started</a></li>
         </ul>
     </div>
-    <!-- <main class="hero-section">
-        <div class="hero-content">
-            <div class="hero-text-and-buttons">
-                <h1>Easy <br> scheduling <br> ahead</h1>
-                <p>Join 20 million professionals who easily book <br> meetings with the #1 scheduling tool.</p>
 
-                <div class="sign-in-options">
-                    <a href="#" class="btn-social google">
-                        <img src="/image/imgi_3_googleLogo.png" alt="Google">
-                        Sign up with Google
-                    </a>
-                    <a href="#" class="btn-social microsoft">
-                        <img src="/image/imgi_82_default.png" alt="Microsoft">
-                        Sign up with Microsoft
-                    </a>
-                </div>
-
-                <div class="email-signup-block">
-                    <p class="or"><span>OR</span></p>
-                    <a href="#" class="signup-email nowrap-desktop">Sign up free with email. <span class="no-credit">No
-                            credit card required</span></a>
-                </div>
-
-            </div>
-
-            <div class="swiping-widget-wrapper">
-                <div class="widget-carousel-image-container">
-
-                    <div id="image-slider-strip" class="image-slider-strip">
-                        <img class="hero-widget-image" src="/image/download.svg" alt="">
-                        <img class="hero-widget-image" src="image/pict.png.png" alt="">
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-        <div class="hero-bg-shapes">
-            <div class="shape-1"></div>
-            <div class="shape-2"></div>
-        </div> -->
-
-
-
-    <!-- <section class="trusted-by-section">
-            <div class="trusted-by-content">
-                <p class="trusted-by-text">Trusted by more than **100,000** of the world’s leading organizations</p>
-
-                <div class="trusted-by-scroller">
-
-                    <div class="marquee-group">
-                        <img src="/img/imgi_33_hackerone-customer-logo.png" alt="HackerOne Logo">
-                        <img src="/img/imgi_12_indiana-university-customer-logo.png" alt="Indiana University Logo">
-                        <img src="/img/imgi_10_Gong-logo.png" alt="Gong Logo">
-                        <img src="/img/imgi_11_carnival-customer-logo.png" alt="Carnival Logo">
-                        <img src="/img/imgi_34_VonageLogo.png" alt="Vonage Logo">
-                        <img src="/img/imgi_35_texas-ut-austin-customer-logo__1_.png" alt="">
-                        <img src="/img/imgi_6_compass-customer-logo.png" alt="">
-                        <img src="/img/imgi_7_loreal-customer-logo.png" alt="">
-                        <img src="/img/imgi_5_lyft-customer-logo.png" alt="">
-                        <img src="/img/imgi_37_smith-ai-customer-logo.png" alt="">
-                        <img src="/img/imgi_8_zendesk-customer-logo.png" alt="">
-                        <img src="/img/imgi_9_dropbox-customer-logo.png" alt="">
-                        <img src="/img/" alt="">
-                    </div>
-
-                    <div class="marquee-group">
-                        <img src="/img/imgi_33_hackerone-customer-logo.png" alt="HackerOne Logo">
-                        <img src="/img/imgi_12_indiana-university-customer-logo.png" alt="Indiana University Logo">
-                        <img src="/img/imgi_10_Gong-logo.png" alt="Gong Logo">
-                        <img src="/img/imgi_11_carnival-customer-logo.png" alt="Carnival Logo">
-                        <img src="/img/imgi_34_VonageLogo.png" alt="Vonage Logo">
-                    </div>
-
-                </div>
-            </div>
-        </section> -->
 
     </main>
     <main class="hero-section">
@@ -225,13 +148,12 @@
 
                 <div class="sign-in-options">
                     <a href="#" class="btn-social google">
-                        <!-- Placeholder for Google Logo -->
-                        <img src="https://placehold.co/20x20/ffffff/4285F4?text=G" alt="Google Logo">
+                        <img src="/image/imgi_3_googleLogo.png" alt="Google Logo">
                         Sign up with Google
                     </a>
                     <a href="#" class="btn-social microsoft">
-                        <!-- Placeholder for Microsoft Logo -->
-                        <img src="https://placehold.co/20x20/ffffff/2F2F2F?text=M" alt="Microsoft Logo">
+
+                        <img src="/image/imgi_82_default.png" alt="Microsoft Logo">
                         Sign up with Microsoft
                     </a>
                 </div>
@@ -248,10 +170,10 @@
                 <div class="widget-carousel-image-container">
 
                     <div id="image-slider-strip" class="image-slider-strip">
-                        <!-- IMPORTANT: Replace the 'src' value below with your hosted image URL and update the 'alt' text -->
+
                         <img class="hero-widget-image" src="/image/book.svg"
                             alt="Product Screenshot 1 - Booking Calendar">
-                        <!-- IMPORTANT: Replace the 'src' value below with your hosted image URL and update the 'alt' text -->
+
                         <img class="hero-widget-image" src="/image/pict.png.png"
                             alt="Product Screenshot 2 - Team Dashboard">
                     </div>
@@ -262,17 +184,16 @@
         </div>
 
         <div class="hero-bg-shapes">
-            <div class="shape-1"></div> <!-- This is the Circle (bottom left) -->
-            <div class="shape-2"></div> <!-- This is the Triangle (top right) -->
-        </div>
+            <div class="shape-1"></div>
+            <div class="shape-2"></div>
     </main>
 
-    <!-- Trusted By Section HTML -->
+
     <div class="trusted-by-section">
         <div class="trusted-by-content">
             <p class="trusted-by-text">Trusted by more than **100,000** of the world’s leading organizations</p>
             <div class="trusted-by-scroller">
-                <!-- Duplicate groups to ensure continuous scroll effect -->
+
                 <div class="marquee-group">
                     <img src="/img/imgi_33_hackerone-customer-logo.png" alt="HackerOne Logo">
                     <img src="/image/imgi_12_indiana-university-customer-logo.png" alt="Indiana University Logo">
@@ -305,26 +226,26 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const sliderStrip = document.getElementById('image-slider-strip');
-            const totalImages = 2; 
+            const totalImages = 2;
             let currentImage = 0;
 
-    
+
             function slideImage() {
                 currentImage = (currentImage + 1);
 
                 if (currentImage >= totalImages) {
 
                     sliderStrip.style.transform = `translateX(-${(totalImages - 1) * 50}%)`;
-                    currentImage = 0; 
+                    currentImage = 0;
                     setTimeout(() => {
                         sliderStrip.style.transition = 'none';
                         sliderStrip.style.transform = 'translateX(0%)';
 
-                        
+
                         setTimeout(() => {
                             sliderStrip.style.transition = 'transform 1s ease-in-out';
-                        }, 50); 
-                    }, 4000); 
+                        }, 50);
+                    }, 4000);
 
                 } else {
                     const offset = currentImage * 50;
@@ -345,7 +266,7 @@
     <section class="feature-section">
         <div class="feature-content">
 
-        
+
             <div class="feature-text">
                 <h1>Calendly makes <br> scheduling simple</h1>
                 <p>Calendly’s easy enough for individual users, and powerful enough to meet the needs of <br> enterprise
@@ -966,9 +887,8 @@
         </div>
     </div>
 
-    <!-- === Footer Legal Section === -->
     <div class="footer-legal">
-        <!-- Left: Language Selector -->
+
         <div class="footer-legal-left">
             <div class="language-selector">
                 <i class="fa-solid fa-earth-europe"></i>

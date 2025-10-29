@@ -1227,7 +1227,7 @@ strong {
 }
 
 .cal-underline {
-    margin-top: 10px;
+    margin-bottom: 1px;
     width: 400px;
     height: 6px;
     border-radius: 4px;
