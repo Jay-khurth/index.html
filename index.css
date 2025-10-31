@@ -221,7 +221,7 @@
     color: var(--color-industry-header) !important;
 }
 
-. .h4-team {
+.h4-team {
     color: var(--color-team-header) !important;
 }
 
@@ -378,6 +378,7 @@
 
     :root {
         --header-height: 60px;
+        overflow: hidden;
     }
 
     .global-bar {
@@ -703,14 +704,14 @@ strong {
 }
 
 
-..hero-bg-shapes {
+.hero-bg-shapes {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 30;
+    z-index: 1;
     display: block;
 }
 
@@ -852,6 +853,7 @@ strong {
         flex-direction: column;
         gap: 40px;
         padding-top: 0;
+        overflow: hidden;
         align-items: center;
     }
 
@@ -1645,7 +1647,6 @@ strong {
     line-height: 1.5;
 }
 
-/* Underline (Ensure animation/fill starts from the LEFT) */
 .cal-underline {
     width: 260px;
     height: 3px;
@@ -2181,7 +2182,7 @@ strong {
 }
 
 .integration-card img {
-    max-width: 100%;
+    max-width: 150%;
     max-height: 100%;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -2290,8 +2291,8 @@ strong {
     }
 
     .integration-card img {
-        max-width: 70%;
-        max-height: 70%;
+        max-width: 150%;
+        max-height: 100%;
     }
 
     .container-grid {
@@ -4141,10 +4142,12 @@ strong {
     }
 
     .footer-columns {
+        overflow: none;
+
         grid-template-columns: 1fr 1fr;
     }
 
     .btn {
         width: 100%;
     }
-}
+    
