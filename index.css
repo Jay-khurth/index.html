@@ -4279,6 +4279,7 @@ strong {
 @media (max-width: 480px) {
     .footer-top h2 {
         font-size: 2rem;
+        overflow: hidden;
     }
 
     .footer-columns {
