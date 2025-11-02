@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendly Clone: Scheduling Automation Platform</title>
+    <link rel="stylesheet" href="index.5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-controls="mobile-menu" hidden>
+
+    <div class="global-bar">
+        <div class="global-left">
+            <div class="global-dropdown">
+                <span><i class="fas fa-globe"></i> English</span>
+                <i class="fas fa-caret-down global-arrow"></i>
+                <ul class="global-menu">
+                    <li><a href="#">Global ▾</a></li>
+                    <li><a href="#">United States</a></li>
+                    <li><a href="#">United Kingdom</a></li>
+                    <li><a href="#">Canada</a></li>
+                    <li><a href="#">Australia</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="global-right">
+            <a href="#" class="talk-sales">Talk to sales</a>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <img src="/image/logo.png.svg" alt="Calendly Logo">
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+
+                    <li class="nav-item dropdown">
+                        <a href="#">Product <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-menu product-menu two-col">
+                            <div class="col">
+                                <h4 class="h4-product">Product</h4>
+                                <a href="#">Features</a>
+                                <a href="#">Pricing</a>
+                                <a href="#">Security</a>
+                                <a href="#">Customer Stories</a>
+                            </div>
+                            <div class="col">
+                                <h4 class="h4-platform">Platform</h4>
+                                <a href="#">Integrations</a>
+                                <a href="#">Developers</a>
+                                <a href="#">Mobile Apps</a>
+                            </div>
+                            <div class="shape-blob shape-product-1"></div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#">Solutions <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-menu solution-menu three-col">
+                            <div class="col">
+                                <h4 class="h4-size">By Business Size</h4>
+                                <a href="#">Small Business</a>
+                                <a href="#">Mid-Market</a>
+                                <a href="#">Enterprise</a>
+                            </div>
+                            <div class="col">
+                                <h4 class="h4-industry">By Industry</h4>
+                                <a href="#">Technology</a>
+                                <a href="#">Financial Services</a>
+                                <a href="#">Higher Education</a>
+                                <a href="#">Recruiting</a>
+                            </div>
+                            <div class="col">
+                                <h4 class="h4-team">By Team</h4>
+                                <a href="#">Sales</a>
+                                <a href="#">Marketing</a>
+                                <a href="#">Customer Success</a>
+                                <a href="#">Operations</a>
+                            </div>
+                            <div class="shape-blob shape-solution-1"></div>
+                            <div class="shape-blob shape-solution-2"></div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#">Resources <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-menu resource-menu two-col">
+                            <div class="col">
+                                <h4 class="h4-explore">Explore</h4>
+                                <a href="#">Blog</a>
+                                <a href="#">Help Center</a>
+                                <a href="#">Tools</a>
+                                <a href="#">API Documentation</a>
+                            </div>
+                            <div class="col">
+                                <h4 class="h4-learn">Learn & Connect</h4>
+                                <a href="#">Video Tutorials</a>
+                                <a href="#">Community</a>
+                                <a href="#">Webinars</a>
+                            </div>
+                            <div class="shape-blob shape-resource-1"></div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item"><a href="/index4.html">Pricing</a></li>
+                </ul>
+            </nav>
+
+            <div class="actions">
+                <a href="/index3.html" class="login">Log In</a>
+                <a href="/index2.html" class="btn-primary">Get started</a>
+
+                <label for="menu-toggle" class="hamburger">
+                    <span> </span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Solutions</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="/index4.html">Pricing</a></li>
+            <li class="divider"></li>
+            <li><a href="/index3.html" class="login">Log In</a></li>
+            <li><a href="/index2.html" class="btn-primary">Get started</a></li>
+        </ul>
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="chat-form-section">
+            <div class="contact-header">
+                <h2>Let's Chat</h2>
+                <p>A Calendly expert will reach out to discuss your needs.</p>
+            </div>
+            <form class="contact-form">
+                <div class="name-inputs">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <input type="email" placeholder="Work Email" required>
+                <select aria-label="How do you plan on using Calendly?">
+                    <option value="" disabled selected>How do you plan on using Calendly?</option>
+                    <option value="sales">Sales</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="other">Other</option>
+                </select>
+                <textarea placeholder="How can we help?" rows="4"></textarea>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+            <p class="form-footer-note">
+                By clicking submit you consent to receive email communications about Calendly products and services and
+                agree to our <a href="#">Terms</a>. Your data will be processed in accordance with our <a
+                    href="#">Privacy Policy</a>. You may opt out at any time.
+            </p>
+        </div>
+
+        <div class="stats-section">
+            <a href="#" class="contact-sales-link">Contact our sales team</a>
+            <h1>Increase revenue, accelerate sales pipeline, and improve customer retention.</h1>
+            <div class="stat-item">
+                <p class="stat-number">20m</p>
+                <p class="stat-description">users worldwide</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-number">100k</p>
+                <p class="stat-description">companies use Calendly</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-number">230+</p>
+                <p class="stat-description">countries with monthly active users</p>
+            </div>
+        </div>
+
+        <div class="chat-popup-placeholder">
+            <button class="chat-button">Prefer to chat?</button>
+            <span class="chat-close-icon">x</span>
+            <div class="chat-icon-circle"></div>
+        </div>
+    </div>
+
+
+
+    <div class="footer-columns">
+            <div class="col">
+                <h4>Product</h4>
+                <ul>
+                    <li>Scheduling automation</li>
+                    <li>Meeting Notetaker <span class="tag">Beta</span></li>
+                    <li>Customizable availability</li>
+                    <li>Mobile apps</li>
+                    <li>Browser extensions</li>
+                    <li>Meeting routing</li>
+                    <li>Event Types</li>
+                    <li>Email & website embeds</li>
+                    <li>Reminders & follow-ups</li>
+                    <li>Meeting polls</li>
+                    <li>Analytics</li>
+                    <li>Admin management</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>Integrations</h4>
+                <ul>
+                    <li>Google ecosystem</li>
+                    <li>Microsoft ecosystem</li>
+                    <li>Calendars</li>
+                    <li>Video conferencing</li>
+                    <li>Payments</li>
+                    <li>Sales & CRM</li>
+                    <li>Recruiting & ATS</li>
+                    <li>Email messaging</li>
+                    <li>Embed Calendly</li>
+                    <li>Analytics</li>
+                    <li>API & connectors</li>
+                    <li>Security & compliance</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>Calendly</h4>
+                <ul>
+                    <li>Pricing</li>
+                    <li>Product overview</li>
+                    <li>Solutions</li>
+                    <li>For individuals</li>
+                    <li>For small businesses</li>
+                    <li>For large companies</li>
+                    <li>Compare</li>
+                    <li>Security</li>
+                    <li>Sign up for free</li>
+                    <li>Talk to sales</li>
+                    <li>Get a demo</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>Resources</h4>
+                <ul>
+                    <li>Help center</li>
+                    <li>Resource center</li>
+                    <li>Blog</li>
+                    <li>Customer stories</li>
+                    <li>Calendly community</li>
+                    <li>Developer tools</li>
+                    <li>Release notes</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>Company</h4>
+                <ul>
+                    <li>About us</li>
+                    <li>Leadership</li>
+                    <li>Careers <span class="tag">We’re hiring!</span></li>
+                    <li>Newsroom</li>
+                    <li>Become a partner</li>
+                    <li>Contact us</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <div class="downloads">
+            <h4>Downloads</h4>
+            <div class="download-links">
+                <a href="#"><i class="fa-brands fa-apple"></i> App Store</a>
+                <a href="#"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                <a href="#"><i class="fa-brands fa-chrome"></i> Chrome extension</a>
+                <a href="#"><i class="fa-brands fa-edge"></i> Edge extension</a>
+                <a href="#"><i class="fa-brands fa-firefox-browser"></i> Firefox extension</a>
+                <a href="#"><i class="fa-brands fa-safari"></i> Safari extension</a>
+                <a href="#"><i class="fa-solid fa-envelope"></i> Outlook add-in</a>
+            </div>
+        </div>
+        <div class="socials">
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-legal">
+
+        <div class="footer-legal-left">
+            <div class="language-selector">
+                <i class="fa-solid fa-earth-europe"></i>
+                <span class="language-text">Language</span>
+                <ul class="language-dropdown">
+                    <li><a href="#">English (US)</a></li>
+                    <li><a href="#">Español</a></li>
+                    <li><a href="#">Deutsch</a></li>
+                    <li><a href="#">Français</a></li>
+                    <li><a href="#">Português (Brasil)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-legal-center">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Legal</a>
+            <a href="#">Status</a>
+            <a href="#">Cookie Settings</a>
+            <a href="#">Your Privacy Choices</a>
+        </div>
+
+
+        <div class="footer-legal-right">
+            <p>© Calendly 2025</p>
+        </div>
+    </div>
+
+
+    <div class="chat-button">
+        <i class="fas fa-comment-dots"></i>
+    </div>

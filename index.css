@@ -5,7 +5,7 @@
     --color-text-light: #6a6a6a;
     --color-border-light: #e0e0e0;
     --header-height: 80px;
-
+    --global-bar-height: 41px;
     --color-product-header: #33a532;
     --color-platform-header: #8a2be2;
     --color-size-header: #e05e4b;
@@ -13,13 +13,10 @@
     --color-team-header: #ffc107;
     --color-explore-header: #17a2b8;
     --color-learn-header: #6f42c1;
-
     --bg-col-platform: #f7f0ff;
-
     --bg-col-industry: #f0f8ff;
     --bg-col-team: #fffdf2;
     --bg-col-learn: #f7f0ff;
-
 }
 
 .global-bar {
@@ -31,10 +28,14 @@
     color: var(--color-text-light);
     font-size: 14px;
     border-bottom: 1px solid var(--color-border-light);
+    z-index: 102;
+    position: relative;
+    height: var(--global-bar-height);
+    box-sizing: border-box;
 }
 
 .global-left {
-    margin-right: 0px;
+    position: relative;
 }
 
 .global-dropdown {
@@ -55,10 +56,9 @@
     margin-right: 5px;
 }
 
-
 .global-menu {
     position: absolute;
-    top: 0;
+    top: calc(100% + 5px);
     left: 100%;
     background: white;
     border: 1px solid var(--color-border-light);
@@ -66,7 +66,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     list-style: none;
     padding: 10px 0;
-    margin-top: -8px;
+    margin-top: 0;
     margin-left: 5px;
     min-width: 180px;
     opacity: 0;
@@ -109,9 +109,12 @@
     background-color: white;
     position: sticky;
     top: 0;
-    z-index: 50;
+    width: 100%;
+    z-index: 100;
     border-bottom: 1px solid var(--color-border-light);
 }
+
+.content-offset {}
 
 .header-inner {
     max-width: 1400px;
@@ -159,14 +162,12 @@
     position: absolute;
     top: calc(100% + 10px);
     left: -20px;
-
     background: white;
     border: 1px solid var(--color-border-light);
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     padding: 24px;
     overflow: hidden;
-
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -221,7 +222,7 @@
     color: var(--color-industry-header) !important;
 }
 
-. .h4-team {
+.h4-team {
     color: var(--color-team-header) !important;
 }
 
@@ -380,15 +381,53 @@
         --header-height: 60px;
     }
 
+    body {
+        overflow-x: hidden !important;
+    }
+
     .global-bar {
         justify-content: space-between;
         padding: 8px 20px;
+        position: relative;
+        top: auto;
     }
 
-    .global-bar .global-dropdown:hover .global-menu {
+    .main-header {
+        position: sticky;
+        top: 0;
+        height: var(--header-height);
+    }
+
+    .content-offset {}
+
+    .global-dropdown .global-menu {
+        position: absolute;
+        top: calc(100% + 5px);
+
+        /* --- FINAL FIX FOR LEFT ALIGNMENT --- */
+        right: auto;
+        left: 0;
+        /* Align to the left edge of the .global-dropdown container */
+
+        max-width: 180px;
+        /* Use a reasonable max width to prevent overflow on smallest screens */
+        min-width: 140px;
+        /* Ensure it's wide enough for the text */
+
+        transform: none;
+        margin-left: 0;
+        margin-right: 0;
         opacity: 0;
         visibility: hidden;
+        z-index: 101;
+        box-sizing: border-box;
     }
+
+    .global-dropdown:hover .global-menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
 
     .header-inner {
         padding: 0 20px;
@@ -398,16 +437,14 @@
     .main-nav,
     .actions .login,
     .dropdown-menu {
-        display: none;
+        display: none !important;
     }
-
 
     .actions .btn-primary {
         display: block;
         padding: 8px 16px;
         font-size: 14px;
     }
-
 
     .hamburger {
         display: flex;
@@ -418,7 +455,6 @@
         cursor: pointer;
         margin-left: 10px;
     }
-
 
     .hamburger span {
         display: block;
@@ -499,46 +535,7 @@
     }
 }
 
-.hero-section {
-    --color-primary: #0069ff;
-    --color-primary-dark: #0056cc;
-    --color-text-dark: #1e1e1e;
-    --color-text-light: #6a6a6a;
-    --color-google-blue: #4285f4;
-    --color-microsoft-green: #2f2f2f;
-    --color-google-hover: #357ae8;
-    --color-microsoft-hover: #1e1e1e;
-    --color-link: #007bff;
-    --color-shape-1: #0069ff;
-    --color-shape-2: #654ff0;
-    --color-set-blue-purple-1: #0069ff;
-    --color-set-blue-purple-2: #654ff0;
-    --color-set-green-red-1: #33a532;
-    --color-set-green-red-2: #e05e4b;
-    --color-set-orange-yellow-1: #ffc107;
-    --color-set-orange-yellow-2: #ff8c00;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: var(--color-text-dark);
-    line-height: 1.5;
-}
-
-p {
-    color: var(--color-text-light);
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-a {
-    text-decoration: none;
-    color: var(--color-primary);
-}
-
+/* --- Base Styles --- */
 .hero-section {
     --color-primary: #0069ff;
     --color-text-dark: #1e1e1e;
@@ -552,8 +549,6 @@ a {
     --color-set-green-red-1: #33a532;
     --color-set-green-red-2: #e05e4b;
 }
-
-
 
 h1 {
     font-weight: 900;
@@ -575,6 +570,28 @@ strong {
     font-weight: 700;
 }
 
+/* --- Global Variables (Assuming these were defined elsewhere) ---
+.hero-section {
+    --color-primary: #0069ff;
+    --color-text-dark: #1e1e1e;
+    --color-text-light: #6a6a6a;
+    --color-google-blue: #4285f4;
+    --color-microsoft-dark: #2f2f2f;
+    --color-shape-1: #0069ff;
+    --color-shape-2: #654ff0;
+    --color-set-blue-purple-1: #0069ff;
+    --color-set-blue-purple-2: #654ff0;
+    --color-set-green-red-1: #33a532;
+    --color-set-green-red-2: #e05e4b;
+}
+
+h1 { font-weight: 900; line-height: 1; }
+p { color: var(--color-text-light); font-size: 1rem; margin-bottom: 20px; }
+a { text-decoration: none; color: var(--color-primary); }
+strong { font-weight: 700; }
+*/
+
+/* --- Hero Section Main Layout --- */
 .hero-section {
     background-color: white;
     position: relative;
@@ -588,19 +605,23 @@ strong {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 50px;
+    gap: 30px;
+    /* ADJUSTED: Reduced gap for closer columns */
     position: relative;
     z-index: 20;
 }
 
 .hero-text-and-buttons {
     max-width: 45%;
+    margin-left: 70px;
+
 }
 
 .hero-text-and-buttons h1 {
     font-size: 4.5rem;
     line-height: 1.1;
     margin-bottom: 20px;
+
     color: var(--color-text-dark);
 }
 
@@ -696,6 +717,7 @@ strong {
     font-size: 0.9em;
 }
 
+
 .swiping-widget-wrapper {
     max-width: 700px;
     width: 100%;
@@ -727,7 +749,6 @@ strong {
     height: 100%;
     object-fit: cover;
 }
-
 
 .hero-bg-shapes {
     position: absolute;
@@ -774,6 +795,7 @@ strong {
     z-index: 2;
 }
 
+/* --- Shape Animations --- */
 @keyframes float-and-rotate-1 {
     0% {
         transform: translate(0, 0) rotate(0deg);
@@ -810,12 +832,12 @@ strong {
     }
 }
 
+/* --- Trusted By Section --- */
 .trusted-by-section {
     padding: 20px 0 80px 0;
     background-color: white;
     overflow: hidden;
     margin-top: 30px;
-
 }
 
 .trusted-by-content {
@@ -864,13 +886,17 @@ strong {
 }
 
 
+/* --- Media Queries --- */
+
 @media (max-width: 1200px) {
     .hero-text-and-buttons {
         max-width: 350px;
+        margin-left: 0;
+        /* Resetting desktop adjustment for tablet/mobile */
     }
 
     .hero-text-and-buttons h1 {
-        font-size: 3.2rem;
+        font-size: 4rem;
         line-height: 1.1;
     }
 
@@ -879,23 +905,12 @@ strong {
     }
 
     .swiping-widget-wrapper {
-        max-width: 500px;
+        max-width: 100%;
     }
 
-
-    .hero-bg-shapes .shape-1 {
-        width: 500px;
-        height: 500px;
-        top: 300px;
-        right: -250px;
-    }
-
-
-    .hero-bg-shapes .shape-2 {
-        display: block !important;
-        border-width: 0 0 400px 400px;
-        top: 500px;
-        left: -150px;
+    /* SHAPE REMOVAL */
+    .hero-bg-shapes {
+        display: none !important;
     }
 }
 
@@ -910,6 +925,8 @@ strong {
     .hero-text-and-buttons {
         max-width: 100%;
         text-align: center;
+        margin-left: 0;
+        /* Resetting desktop adjustment for tablet/mobile */
     }
 
     .hero-text-and-buttons h1 br:first-child {
@@ -917,17 +934,16 @@ strong {
     }
 
     .hero-text-and-buttons h1 {
-
-        font-size: 2.1rem;
+        font-size: 5rem;
         line-height: 1.1;
         white-space: normal;
-        overflow: visible;
+        overflow: hidden;
         text-overflow: clip;
     }
 
 
     .hero-text-and-buttons p {
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
 
     .sign-in-options,
@@ -939,26 +955,24 @@ strong {
     .swiping-widget-wrapper {
         transform: none !important;
         max-width: 90%;
+        width: 100%;
         box-shadow: none;
     }
 
     .widget-carousel-image-container {
         height: 250px;
+        width: 100%;
+        max-width: 100%;
     }
 
-
-    .hero-bg-shapes .shape-1 {
-        width: 300px;
-        height: 300px;
-        top: 550px;
-        right: -100px;
+    .image-slider-strip {
+        width: 200%;
+        height: 100%;
     }
 
-    .hero-bg-shapes .shape-2 {
-        display: block !important;
-        border-width: 0 0 250px 250px;
-        top: 500px;
-        left: -80px;
+    /* SHAPE REMOVAL */
+    .hero-bg-shapes {
+        display: none !important;
     }
 }
 
@@ -967,7 +981,6 @@ strong {
         font-size: 1.8rem;
     }
 }
-
 
 .interactive-list-container {
     max-width: 600px;
@@ -1353,8 +1366,7 @@ strong {
     animation-delay: 20s;
 }
 
-/* text pop staggered same as fills */
-.cal-step:nth-child(1) .cal-body p {
+text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     animation-delay: 0s;
 }
 
@@ -1622,19 +1634,24 @@ strong {
     }
 }
 
+
 /* --- Global & Header Section Styles (Unchanged) --- */
+/* (Assuming you have global styles defined elsewhere) */
+
+/* --- Feature Section Styles (Desktop) --- */
 .feature-section {
     padding: 80px 0;
     background: #f5f7fa;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.feature-content {
+.cal-wrap {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* Feature section heading and description (Desktop: Centered) */
 .feature-text {
     text-align: center;
     min-width: 300px;
@@ -1661,30 +1678,6 @@ strong {
     margin-right: auto;
 }
 
-.feature-text .btn-primary {
-    background: #006bff;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    border: none;
-    display: inline-block;
-    margin: 0 auto;
-    transition: background 0.3s;
-}
-
-.feature-text .btn-primary:hover {
-    background: #0056e6;
-}
-
-/* --- Steps and Image Layout (Unchanged) --- */
-.cal-wrap {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 .cal-section {
     display: flex;
     justify-content: center;
@@ -1706,23 +1699,30 @@ strong {
     align-items: center;
 }
 
-/* --- Step Content and Animation Logic --- */
-
+/* --- Icon next to Header (using .cal-header-group) --- */
 .cal-step {
+    /* Stacks header group and body vertically */
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 0;
+}
+
+.cal-header-group {
+    /* Aligns icon and header horizontally */
+    display: flex;
+    align-items: center;
     gap: 16px;
-    transition: all 0.3s ease-in-out;
 }
 
 .cal-icon {
     font-size: 24px;
-    margin-top: 4px;
     flex-shrink: 0;
 }
 
 .cal-body {
     overflow: hidden;
+    display: block;
 }
 
 .cal-body h3 {
@@ -1730,88 +1730,16 @@ strong {
     font-weight: 600;
     padding: 0;
     color: #0b3558;
-}
-
-/* 1. Underline (Closed State & Closing Transition) */
-.cal-underline {
-    width: 260px;
-    height: 3px;
-    background: #cce0ff;
-
-    /* Closed gap state */
-    margin-top: 2px;
-    margin-bottom: 0;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    transform-origin: left;
-
-    /* Transition used for CLOSING */
-    transition: margin-top 1.8s ease-in-out;
-}
-
-/* 2. Line Fill (Initial State) */
-.cal-fill {
     display: block;
-    height: 100%;
-    background: #006bff;
-    width: 0;
-
-    /* Line Draw Time (4.8s) */
-    transition: width 9.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-/* 3. Paragraph (Hidden State) */
-.cal-body p {
+.cal-step p {
     color: #4b5563;
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.4;
     margin-top: 5px;
-
-    max-height: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(15px);
-
-    /* Hide Transition is SLOWED */
-    transition: max-height 3s ease-out,
-        opacity 1.2s ease-in,
-        transform 1.2s ease-in-out,
-        visibility 0s linear 3s;
 }
 
-/* --- Active State (Triggered by JS) --- */
-
-/* A. Open the Gap SYNCHRONIZED with text pop-out */
-.cal-step.active .cal-underline {
-    margin-top: 10px;
-
-    /* DELAY is reduced for synchronization: 4.8s -> 2.4s */
-    transition: margin-top 1.8s ease-in-out 2.4s;
-}
-
-/* B. Expand the Line (Starts immediately when .active is added) */
-.cal-step.active .cal-fill {
-    width: 100%;
-}
-
-/* C. Pop Out the Text SYNCHRONIZED with gap opening */
-.cal-step.active .cal-body p {
-    max-height: 100px;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-
-    /* DELAY is reduced for synchronization: 4.8s -> 2.4s */
-    transition: max-height 3s ease-out,
-        opacity 1.2s ease-out 2.4s,
-        /* Start at 2.4s, ends at 3.6s */
-        transform 1.2s ease-out 2.4s,
-        visibility 0s linear 0s;
-}
-
-
-/* --- Image Placeholder Styling (Unchanged) --- */
 .cal-image-border {
     width: 520px;
     height: 480px;
@@ -1824,83 +1752,66 @@ strong {
     position: relative;
 }
 
-.cal-image-slider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.cal-image-slider img {
-    width: auto;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    animation: fadeSlide 14s infinite ease-in-out;
-}
-
-@keyframes fadeSlide {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    10%,
-    90% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-}
-
-/* --- Media Queries (Unchanged) --- */
+/* --- Mobile Media Query (All Left Alignment) --- */
 @media (max-width: 992px) {
+
+    .cal-wrap {
+        padding: 0 !important;
+    }
+
     .cal-section {
-        flex-direction: column;
-        align-items: center;
-        gap: 60px;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 40px;
     }
 
     .feature-text {
-        text-align: center;
+        /* *** CORRECTED FIX: Force left alignment and re-apply 20px padding *** */
+        text-align: left !important;
+        padding: 0 20px !important;
+        right: auto;
+        /* Removed invalid property */
     }
 
     .feature-text h1,
     .feature-text p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .feature-text h1 {
-        font-size: 3rem;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: left !important;
     }
 
     .cal-left {
         width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 20px !important;
+        box-sizing: border-box;
     }
 
     .cal-right {
         width: 100%;
-        justify-content: center;
-        flex-shrink: 0;
+        justify-content: flex-start !important;
+        padding: 0 20px !important;
+    }
+
+    .cal-step {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+
+    .cal-header-group {
+        justify-content: flex-start !important;
+        margin-left: 0 !important;
     }
 
     .cal-image-border {
         width: 100%;
         max-width: 450px;
         height: 350px;
+        margin: 0 !important;
+       left: 50px;
     }
 }
 
-.integrations-section {
+*/ .integrations-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 6rem 2rem;
@@ -4290,4 +4201,3 @@ strong {
         width: 100%;
     }
 }
-
