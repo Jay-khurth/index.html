@@ -1,3 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 :root {
     --color-primary: #0069ff;
     --color-primary-dark: #0056cc;
@@ -32,6 +40,7 @@
     position: relative;
     height: var(--global-bar-height);
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .global-left {
@@ -404,15 +413,12 @@
         position: absolute;
         top: calc(100% + 5px);
 
-        /* --- FINAL FIX FOR LEFT ALIGNMENT --- */
         right: auto;
         left: 0;
-        /* Align to the left edge of the .global-dropdown container */
 
         max-width: 180px;
-        /* Use a reasonable max width to prevent overflow on smallest screens */
+
         min-width: 140px;
-        /* Ensure it's wide enough for the text */
 
         transform: none;
         margin-left: 0;
@@ -535,7 +541,6 @@
     }
 }
 
-/* --- Base Styles --- */
 .hero-section {
     --color-primary: #0069ff;
     --color-text-dark: #1e1e1e;
@@ -570,33 +575,12 @@ strong {
     font-weight: 700;
 }
 
-/* --- Global Variables (Assuming these were defined elsewhere) ---
-.hero-section {
-    --color-primary: #0069ff;
-    --color-text-dark: #1e1e1e;
-    --color-text-light: #6a6a6a;
-    --color-google-blue: #4285f4;
-    --color-microsoft-dark: #2f2f2f;
-    --color-shape-1: #0069ff;
-    --color-shape-2: #654ff0;
-    --color-set-blue-purple-1: #0069ff;
-    --color-set-blue-purple-2: #654ff0;
-    --color-set-green-red-1: #33a532;
-    --color-set-green-red-2: #e05e4b;
-}
-
-h1 { font-weight: 900; line-height: 1; }
-p { color: var(--color-text-light); font-size: 1rem; margin-bottom: 20px; }
-a { text-decoration: none; color: var(--color-primary); }
-strong { font-weight: 700; }
-*/
-
-/* --- Hero Section Main Layout --- */
 .hero-section {
     background-color: white;
     position: relative;
     padding: 80px 5% 50px 5%;
     overflow: hidden;
+    overflow-x: hidden;
 }
 
 .hero-content {
@@ -606,7 +590,6 @@ strong { font-weight: 700; }
     justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
-    /* ADJUSTED: Reduced gap for closer columns */
     position: relative;
     z-index: 20;
 }
@@ -614,7 +597,6 @@ strong { font-weight: 700; }
 .hero-text-and-buttons {
     max-width: 45%;
     margin-left: 70px;
-
 }
 
 .hero-text-and-buttons h1 {
@@ -795,7 +777,6 @@ strong { font-weight: 700; }
     z-index: 2;
 }
 
-/* --- Shape Animations --- */
 @keyframes float-and-rotate-1 {
     0% {
         transform: translate(0, 0) rotate(0deg);
@@ -832,7 +813,6 @@ strong { font-weight: 700; }
     }
 }
 
-/* --- Trusted By Section --- */
 .trusted-by-section {
     padding: 20px 0 80px 0;
     background-color: white;
@@ -886,13 +866,10 @@ strong { font-weight: 700; }
 }
 
 
-/* --- Media Queries --- */
-
 @media (max-width: 1200px) {
     .hero-text-and-buttons {
         max-width: 350px;
         margin-left: 0;
-        /* Resetting desktop adjustment for tablet/mobile */
     }
 
     .hero-text-and-buttons h1 {
@@ -908,7 +885,6 @@ strong { font-weight: 700; }
         max-width: 100%;
     }
 
-    /* SHAPE REMOVAL */
     .hero-bg-shapes {
         display: none !important;
     }
@@ -926,7 +902,6 @@ strong { font-weight: 700; }
         max-width: 100%;
         text-align: center;
         margin-left: 0;
-        /* Resetting desktop adjustment for tablet/mobile */
     }
 
     .hero-text-and-buttons h1 br:first-child {
@@ -970,7 +945,6 @@ strong { font-weight: 700; }
         height: 100%;
     }
 
-    /* SHAPE REMOVAL */
     .hero-bg-shapes {
         display: none !important;
     }
@@ -989,6 +963,7 @@ strong { font-weight: 700; }
     padding-right: 800px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #333;
+    overflow: hidden;
 }
 
 
@@ -1219,6 +1194,7 @@ strong { font-weight: 700; }
 .kiker h1 {
     font-size: 90px;
     color: #0b3558;
+    overflow: hidden;
 }
 
 .kiker .btn {
@@ -1635,13 +1611,10 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
 }
 
 
-/* --- Global & Header Section Styles (Unchanged) --- */
-/* (Assuming you have global styles defined elsewhere) */
-
-/* --- Feature Section Styles (Desktop) --- */
 .feature-section {
     padding: 80px 0;
     background: #f5f7fa;
+    overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -1650,8 +1623,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     margin: 0 auto;
     padding: 0 20px;
 }
-
-/* Feature section heading and description (Desktop: Centered) */
 .feature-text {
     text-align: center;
     min-width: 300px;
@@ -1690,7 +1661,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* DESKTOP CHANGE: Pushes content right */
     margin-left: 100px;
 }
 
@@ -1700,10 +1670,7 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     justify-content: center;
     align-items: center;
 }
-
-/* --- Icon next to Header (using .cal-header-group) --- */
 .cal-step {
-    /* Stacks header group and body vertically */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1711,7 +1678,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
 }
 
 .cal-header-group {
-    /* Aligns icon and header horizontally */
     display: flex;
     align-items: center;
     gap: 16px;
@@ -1784,7 +1750,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
         width: 100%;
         padding: 0 20px !important;
         box-sizing: border-box;
-        /* THE FIX: Explicitly reset margin-left for mobile view */
         margin-left: 0 !important;
     }
 
@@ -2160,7 +2125,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     }
 
     .integration-card img {
-        /* ADJUSTMENT: Made image a little bigger on small screens */
         max-width: 85%;
         max-height: 85%;
     }
@@ -2248,6 +2212,7 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     text-align: center;
     background-color: hsl(0, 0%, 100%);
     padding: 9px 9px 9px 9px;
+    overflow: hidden;
 }
 
 .main-heading {
@@ -2339,7 +2304,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
 }
 
 .features-left .feature {
-    /* ADJUSTED: Reduced vertical space to 5px for very close spacing */
     margin-bottom: 5px;
     position: relative;
 }
@@ -2630,7 +2594,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     background: #fff;
     border-radius: 12px;
     font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-    /* FIX: Prevents horizontal scrollbar for the entire section */
     overflow-x: hidden;
 }
 
@@ -3022,7 +2985,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     margin: 0 auto;
     padding: 60px 20px;
     text-align: center;
-    /* OVERFLOW GUARDRAIL: Prevents horizontal scrolling on the entire page */
     overflow-x: hidden;
 }
 
@@ -3292,7 +3254,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     background-color: #f8f9fa;
     padding: 80px 0;
     text-align: center;
-    /* FIX: Prevents the horizontal overflow from scrolling the entire page */
     overflow-x: hidden;
 }
 
@@ -3484,7 +3445,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     padding: 70px 8%;
     font-family: "Inter", sans-serif;
     color: #0b1220;
-    /* FIX: Prevents horizontal scroll/overflow on the entire footer section */
     overflow-x: hidden;
 }
 
