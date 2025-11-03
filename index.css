@@ -1682,14 +1682,16 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 80px;
+    gap: 40px;
     margin-top: 40px;
 }
 
 .cal-left {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
+    /* DESKTOP CHANGE: Pushes content right */
+    margin-left: 100px;
 }
 
 .cal-right {
@@ -1766,11 +1768,9 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     }
 
     .feature-text {
-        /* *** CORRECTED FIX: Force left alignment and re-apply 20px padding *** */
         text-align: left !important;
         padding: 0 20px !important;
         right: auto;
-        /* Removed invalid property */
     }
 
     .feature-text h1,
@@ -1784,6 +1784,8 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
         width: 100%;
         padding: 0 20px !important;
         box-sizing: border-box;
+        /* THE FIX: Explicitly reset margin-left for mobile view */
+        margin-left: 0 !important;
     }
 
     .cal-right {
@@ -1807,195 +1809,8 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
         max-width: 450px;
         height: 350px;
         margin: 0 !important;
-       left: 50px;
+        left: 50px;
     }
-}
-
-*/ .integrations-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 6rem 2rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-.integrations-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 4rem;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 0 1rem;
-}
-
-.header-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    line-height: 1.2;
-    color: #0b3558;
-    max-width: 600px;
-}
-
-.header-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    white-space: nowrap;
-}
-
-.header-text {
-    font-size: 1rem;
-    color: #375975;
-    margin-bottom: 0.5rem;
-}
-
-.view-integrations {
-    color: #0060e3;
-    text-decoration: none;
-    font-weight: 600;
-    position: relative;
-    padding-bottom: 2px;
-}
-
-.view-integrations::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #0060e3;
-    transition: width 0.3s ease;
-}
-
-.view-integrations:hover::after {
-    width: 100%;
-}
-
-.integrations-layout {
-    display: grid;
-    grid-template-columns: repeat(9, minmax(80px, 1fr));
-    gap: 3rem;
-    padding: 0 1rem;
-}
-
-.integration-card {
-    background-color: #f7f7f7;
-    border-radius: 16px;
-    padding: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-    height: 90px;
-    border: 1px solid transparent;
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        box-shadow 0.3s ease,
-        opacity 0.3s ease,
-        border 0.3s ease;
-}
-
-.integration-card:hover {
-    transform: translateY(-8px) rotate(2deg);
-    box-shadow: 0 12px 20px rgba(135, 206, 235, 0.3);
-    opacity: 0.95;
-    border: 1px solid #0060e3;
-}
-
-.integration-card img {
-    max-width: 100%;
-    max-height: 100%;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.integration-card:hover img {
-    transform: scale(1.1) rotate(-2deg);
-    opacity: 0.9;
-}
-
-.container-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 50px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 6px 16px 16px 16px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-.app-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out,
-        box-shadow 0.3s ease-in-out,
-        background-color 0.3s ease,
-        opacity 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.app-box img {
-    margin-bottom: 9px;
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease;
-}
-
-.app-box p {
-    color: #0b3558;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    margin: 0 0 4px 0;
-    text-align: left;
-    font-size: 1.8em;
-}
-
-.app-box span {
-    color: #757575;
-    font-size: 0.99em;
-    display: block;
-    text-align: left;
-}
-
-.app-box::after {
-    content: '↑';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #000000;
-    font-size: 1.2em;
-    transform: rotate(45deg);
-    transform-origin: top right;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.app-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #e6f0ff;
-    opacity: 0.95;
-}
-
-.app-box:hover img {
-    transform: scale(1.05);
-}
-
-.app-box:hover::after {
-    transform: rotate(45deg) translateY(-5px);
-    opacity: 0.7;
-}
-
-.app-box:active {
-    transform: translateY(2px);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 720px) {
@@ -2140,11 +1955,14 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     }
 }
 
+
+
 .integrations-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 6rem 2rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    overflow-x: hidden;
 }
 
 .integrations-header {
@@ -2268,7 +2086,7 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    width: 90%;
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -2342,8 +2160,9 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     }
 
     .integration-card img {
-        max-width: 70%;
-        max-height: 70%;
+        /* ADJUSTMENT: Made image a little bigger on small screens */
+        max-width: 85%;
+        max-height: 85%;
     }
 
     .container-grid {
@@ -2508,10 +2327,11 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 100px;
-    padding: 80px 40px;
+    gap: 60px;
+    padding: 80px 30px;
     font-family: "Inter", sans-serif;
     flex-direction: row-reverse;
+    overflow-x: hidden;
 }
 
 .features-left .text-side {
@@ -2519,7 +2339,8 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
 }
 
 .features-left .feature {
-    margin-bottom: 60px;
+    /* ADJUSTED: Reduced vertical space to 5px for very close spacing */
+    margin-bottom: 5px;
     position: relative;
 }
 
@@ -2802,7 +2623,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     }
 }
 
-
 .cal-pricing-right {
     max-width: 1400px;
     margin: 0 auto;
@@ -2810,6 +2630,8 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     background: #fff;
     border-radius: 12px;
     font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    /* FIX: Prevents horizontal scrollbar for the entire section */
+    overflow-x: hidden;
 }
 
 .cal-header-left {
@@ -3200,6 +3022,8 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     margin: 0 auto;
     padding: 60px 20px;
     text-align: center;
+    /* OVERFLOW GUARDRAIL: Prevents horizontal scrolling on the entire page */
+    overflow-x: hidden;
 }
 
 .title-section {
@@ -3383,7 +3207,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
 
 @media (max-width: 1200px) {
     .carousel-card {
-        width: 50px;
         flex: 0 0 calc(33.333% - 13.333px);
         max-width: calc(33.333% - 13.333px);
     }
@@ -3403,8 +3226,8 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
 
 
     .carousel-card {
-        flex: 0 0 80%;
-        max-width: 80%;
+        flex: 0 0 40%;
+        max-width: 40%;
         min-height: 220px;
         padding: 12px;
 
@@ -3412,9 +3235,13 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
         text-align: center;
     }
 
+    .carousel-card:last-child {
+        margin-right: 100%;
+    }
+
     .carousel-track {
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 30%;
+        padding-right: 30%;
     }
 
     .read-now-btn {
@@ -3423,7 +3250,6 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
 
     .company-logo {
         font-size: 1.4rem;
-        margin-bottom: 8px;
     }
 
     .metric {
@@ -3466,6 +3292,8 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     background-color: #f8f9fa;
     padding: 80px 0;
     text-align: center;
+    /* FIX: Prevents the horizontal overflow from scrolling the entire page */
+    overflow-x: hidden;
 }
 
 .container {
@@ -3656,6 +3484,8 @@ text pop staggered same as fills .cal-step:nth-child(1) .cal-body p {
     padding: 70px 8%;
     font-family: "Inter", sans-serif;
     color: #0b1220;
+    /* FIX: Prevents horizontal scroll/overflow on the entire footer section */
+    overflow-x: hidden;
 }
 
 .footer-top {
